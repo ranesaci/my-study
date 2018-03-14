@@ -14,15 +14,16 @@ public class SingleLinkedListDS {
 		
 		//iterate linked list
 		for(p=start; p.next !=null; p=p.next) {
-			System.out.println(p.data);
+			System.out.print(p.data+ " ");
 		}
 		
 		//add element in the linked list in order
-		System.out.println("**add element in the linked list in order**");
+		System.out.println("\n**add element in the linked list in order**");
 		insert(23, start);
 		insert(12, start);
+		start = insert(10, start);
 		for(p=start; p.next !=null; p=p.next) {
-			System.out.println(p.data); 
+			System.out.print(p.data+ " "); 
 		}
 		
 		
@@ -30,8 +31,14 @@ public class SingleLinkedListDS {
 
 		
 	}
-	public static void insert(int x, Node start) {//adding for linked list elements in the ascending order
+	public static Node insert(int x, Node start) {//adding for linked list elements in the ascending order
 		Node p = start;
+		//check for start node 	if null or having data more than adding element
+		if(start==null || start.data > x){
+			p = new Node(x, p);
+			return p;
+			
+		}
 		while (p.next!= null) {
 			if(p.next.data > x) {
 				break;
@@ -41,7 +48,9 @@ public class SingleLinkedListDS {
 		}
 		//add here element using other constructor
 		p.next = new Node(x,p.next);
+		return start;
 		
 	}
+	
 
 }
