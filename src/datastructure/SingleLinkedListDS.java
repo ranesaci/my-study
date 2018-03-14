@@ -22,7 +22,7 @@ public class SingleLinkedListDS {
 		insert(23, start);
 		insert(12, start);
 		for(p=start; p.next !=null; p=p.next) {
-			System.out.println(p.data);
+			System.out.println(p.data); 
 		}
 		
 		
