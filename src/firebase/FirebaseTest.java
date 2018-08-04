@@ -25,7 +25,7 @@ public class FirebaseTest {
 	public static void main(String[] args) throws Exception {
 		Firestore firestore1 = new FireBaseDB().getFireDtoreDb();
 		
-		addData(firestore1, "d11");
+		addData(firestore1, "d10");
 		firestore1.close();
 		Firestore firestore2 = new FireBaseDB().getFireDtoreDb();
 		retriveData(firestore2);
